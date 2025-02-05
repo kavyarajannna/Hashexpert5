@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="Picture50 - Copy.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+        }
+
+         /* Header Styles */
+      header {
+        background-color: white;
+        color: #000;
+        padding: 15px 20px;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+        padding: 5px;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #007bff;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.close span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.close span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.close span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #333;
+            width: 100%;
+            z-index: 10;
+            padding: 20px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: white;
+            padding: 10px;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    }
+
+
+
+        /* Scroll Up Button */
+        #scrollUpBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4A148C;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #scrollUpBtn:hover {
+            background-color: #8e44ad;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 10px;
+                /* Reduces gap between columns for small screens */
+            }
+
+            .contact-container .vertical-line {
+                display: none;
+                /* Hides the vertical line on mobile */
+            }
+        }
+
+        /* Hero Section */
+        section.hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            /* Default height for large screens */
+            overflow: hidden;
+        }
+
+        section.hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        section.hero img.active {
+            opacity: 1;
+        }
+
+        section.hero .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center text horizontally and vertically */
+            color: #ffffff;
+            text-align: center;
+            /* Ensure the text is centered */
+            width: 100%;
+            padding: 0 10%;
+            /* Add some padding for smaller screens */
+        }
+
+        section.hero .hero-content h1 {
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: .5rem;
+        }
+
+        section.hero .hero-content p {
+            font-size: 1.2857142857rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            line-height: 1.875rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        /* Updated Arrow Styles (Larger Size) */
+        section.hero .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 6rem;
+            /* Large size */
+            color: white;
+            /* Arrow color */
+            cursor: pointer;
+            z-index: 10;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+        }
+
+        /* Left and Right Arrows */
+        section.hero .arrow.left {
+            left: 10px;
+        }
+
+        section.hero .arrow.right {
+            right: 10px;
+
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            section.hero {
+                height: 40vh;
+                /* Reduced height for mobile */
+            }
+
+            section.hero .arrow {
+
+                font-size: 3.5rem;
+                /* Reduce size for smaller screens */
+                top: auto;
+                /* Reset top position */
+                bottom: 10%;
+                /* Move arrow downward */
+                right: 10%;
+                /* Position it away from the menu */
+                left: auto;
+                /* Prevent centering */
+            }
+
+            section.hero .hero-content {
+                left: 50%;
+                /* Centering on small screens */
+                transform: translateX(-50%);
+                /* Adjust positioning for mobile */
+                width: 80%;
+                /* Decrease width for mobile */
+                padding: 0 5%;
+                /* Reduce padding */
+            }
+        }
+
+        /* News Section */
+        section.news {
+            background-color: #4A148C;
+            color: white;
+            padding: 10px;
+            position: relative;
+            height: 150px;
+            /* Reduced height */
+        }
+
+        section.news .news-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        section.news .news-item {
+            flex: 0 0 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: transform 1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section.news .arrow {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+
+        section.news .arrow.left {
+            left: 10px;
+        }
+
+        section.news .arrow.right {
+            right: 10px;
+        }
+
+        section.news .news-footer {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section.hero .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            section.hero .hero-content p {
+                font-size: 1rem;
+            }
+
+            section.hero .arrow {
+                width: 40px;
+                height: 40px;
+            }
+
+            section.news {
+                height: 120px;
+                /* Further reduce height for smaller screens */
+            }
+
+            section.news .arrow {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section.hero .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            section.hero .hero-content p {
+                font-size: 0.8rem;
+            }
+
+            section.news {
+                height: 100px;
+                /* Minimum height for mobile devices */
+            }
+        }
+
+        /* Section Styles */
+        /* Section Styles */
+        .vision-mission {
+            padding: 40px 5%;
+            background-color: #fff;
+        }
+
+        /* Row Styles */
+        .vision-mission .row {
+            display: flex;
+            flex-wrap: nowrap;
+            /* Ensure both columns stay in the same row */
+            align-items: stretch;
+            gap: 30px;
+        }
+
+        /* Left Column Text Styles */
+        .vision-mission-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        /* Vision and Mission Text */
+        .vision-mission h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+            color: #1d2833;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Increase gap between Vision and Mission */
+        .vision-mission .vision,
+        .vision-mission .mission {
+            margin-bottom: 30px;
+        }
+
+        /* Horizontal Line */
+        .vision-mission hr {
+            width: 100%;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph Styles */
+        .vision-mission p {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            font-weight: 400;
+            color: #555;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Right Column - Image fills the column */
+        .vision-mission-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vision-mission-image .image-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .vision-mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .vision-mission .row {
+                flex-wrap: wrap;
+                /* Allow wrapping on smaller screens */
+            }
+
+            .vision-mission-text {
+                padding: 0;
+            }
+
+            .vision-mission h2 {
+                font-size: 1.8rem;
+            }
+
+            .vision-mission p {
+                font-size: 1rem;
+            }
+
+            .vision-mission-image {
+                height: 300px;
+                /* Fixed height for tablets */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .vision-mission {
+                padding: 30px 5%;
+            }
+
+            .vision-mission .row {
+                flex-direction: column;
+            }
+
+            .vision-mission h2 {
+                font-size: 1.5rem;
+            }
+
+            .vision-mission p {
+                font-size: 1.2rem;
+            }
+
+            .vision-mission-image {
+                height: 250px;
+            }
+        }
+
+        /* About Us Section */
+        /* About Us Section */
+        .about-us895 {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Strict 5% Padding for Container */
+        .container895 {
+            width: 90%;
+            /* Ensures exact 5% padding on both sides */
+            margin: auto;
+            /* Centers the container */
+        }
+
+        /* Row Styles */
+        .row895 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* About Us Text */
+        .about-us-text895 {
+            text-align: justify;
+        }
+
+        /* About Us Headings */
+        .about-us895 h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1d2833;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Paragraph Styles */
+        .about-us895 p {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            font-weight: 400;
+            color: #555;
+            font-family: "Open Sans", sans-serif;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 767px) {
+            .container895 {
+                width: 90%;
+                /* Ensure strict 5% padding on mobile */
+            }
+
+            .row895 {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .about-us-text895 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .about-us895 h2 {
+                font-size: 24px;
+            }
+
+            .about-us895 p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .section-explore {
+            background-color: #f5f7fa;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .section-explore p {
+            font-size: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        .section-explore a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        .section-explore a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* Scoped CSS for container55 with 5% left and right padding */
+        .container55 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4% 5%;
+            /* Adjusted left and right padding to 5% */
+            gap: 3%;
+            flex-wrap: wrap;
+        }
+
+
+        .container55 .left-column {
+            flex: 1 1 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Justifies content inside the left column */
+        }
+
+        .container55 .left-column h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1d2833;
+        }
+
+        .container55 .left-column p {
+            font-size: 1.285rem;
+            margin-bottom: 1rem;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            line-height: 1.8;
+        }
+
+        .container55 .left-column .button {
+            display: inline-block;
+            background-color: #0088c9;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+            width: 50%;
+            font-weight: bold;
+            /* border-radius: 5px; */
+            transition: background-color 0.3s ease;
+            border: none;
+            /* Removed border */
+        }
+
+        .container55 .left-column .button:hover {
+            background-color: #0056b3;
+        }
+
+        .container55 .right-column {
+            flex: 1 1 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container55 .right-column img {
+            width: 100%;
+            /* Fills the column width */
+            height: 364px;
+            /* Fixed height */
+            object-fit: cover;
+            /* Ensures proper scaling without distortion */
+            /* border-radius: 5px; */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .container55 {
+                padding: 5%;
+                /* Maintain 5% padding on left and right */
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container55 .left-column,
+            .container55 .right-column {
+                flex: 1 1 100%;
+            }
+
+            .container55 .left-column h1 {
+                font-size: 2rem;
+            }
+
+            .container55 .left-column p {
+                font-size: 1rem;
+            }
+
+            .container55 .right-column img {
+                width: 100%;
+                height: 364px;
+                /* Fixed height */
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container55 {
+                padding: 5%;
+                /* Slightly more padding for smaller screens */
+                flex-direction: column;
+                text-align: justify;
+            }
+
+            .container55 .left-column,
+            .container55 .right-column {
+                flex: 1 1 100%;
+            }
+
+            .container55 .left-column h1 {
+                font-size: 1.75rem;
+            }
+
+            .container55 .left-column p {
+                font-size: 1.2rem;
+            }
+
+            .container55 .right-column img {
+                width: 100%;
+                height: 364px;
+                /* Fixed height */
+                margin-top: 1.5rem;
+            }
+        }
+
+
+
+        /* section content */
+        section.section-connect {
+            background-color: #5c2d91;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5.7%;
+            /* 10% padding on left and right */
+        }
+
+        section.section-connect h2 {
+            margin: 0;
+            font-size: 2.5rem;
+            /* Default font size */
+            font-weight: 600;
+            line-height: 1.2;
+            margin-right: 20px;
+            /* Gap between text and button */
+        }
+
+        .contact-button {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            /* Default font size for the button */
+            font-weight: 700;
+            letter-spacing: 0.0375rem;
+            line-height: 1.5;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #fff;
+            color: #5c2d91;
+        }
+
+        @media (max-width: 1200px) {
+            section.section-connect h2 {
+                font-size: 2.1rem;
+                /* Slightly smaller for medium screens */
+            }
+
+            .contact-button {
+                font-size: 1rem;
+                /* Smaller button text */
+            }
+        }
+
+        @media (max-width: 1024px) {
+            section.section-connect h2 {
+                font-size: 1.9rem;
+                /* Smaller font size for tablet screens */
+            }
+
+            .contact-button {
+                font-size: 0.95rem;
+                /* Adjust button font size */
+            }
+        }
+
+        @media (max-width: 768px) {
+            section.section-connect h2 {
+                font-size: 1.6rem;
+                /* Further reduce font size for small screens */
+            }
+
+            .contact-button {
+                font-size: 0.9rem;
+                /* Reduce button font size */
+                padding: 8px 15px;
+                /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            section.section-connect h2 {
+                font-size: 1.4rem;
+                /* Make text smaller for extra-small screens */
+            }
+
+            .contact-button {
+                font-size: 0.85rem;
+                /* Small button text */
+                padding: 8px 12px;
+                /* Adjust padding for extra-small screens */
+            }
+        }
+
+
+
+        /* Footer Styling */
+       /* Footer Styling */
+    footer {
+        background-color: #eceef1;
+        padding: 30px 0;
+        /* Reduced vertical padding */
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        color: #333;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-container {
+        width: 100%;
+        /* Full width for footer */
+        margin: 0 auto;
+        padding: 0 5%;
+        /* 5% padding on left and right */
+    }
+
+    /* Adjust padding for smaller screens (below 768px) */
+    @media (max-width: 768px) {
+        .footer-container {
+            padding: 0 5%;
+            /* Maintain 5% padding on left and right for small screens */
+        }
+    }
+
+    .footer-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .column-left,
+    .column-right {
+        padding: 0 0;
+        /* Reduced padding */
+        flex: 1;
+        min-width: 250px;
+        box-sizing: border-box;
+        /* Prevents extra space from padding */
+    }
+
+    /* Footer Links */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        margin: 10px 0;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #4b0082;
+        font-weight: bold;
+        font-size: 1.3rem;
+        /* Updated font-size */
+        line-height: 1.5;
+    }
+
+    .footer-links a:hover {
+        color: #000;
+    }
+
+    /* Right Column */
+    .footer-logo {
+        width: 300px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .text-row p {
+        text-align: justify;
+        font-size: 1.2857142857rem;
+        /* Updated font-size */
+        line-height: 1.8125rem;
+        /* Updated line-height */
+    }
+
+    .text-row a {
+        color: #4b0082;
+        text-decoration: none;
+    }
+
+    .text-row a:hover {
+        text-decoration: underline;
+    }
+
+    /* Social Icons Section */
+    .footer-social {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .social-icons a {
+        color: #5f249f;
+        /* Updated color */
+        font-size: 30px;
+        margin-right: 10px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .social-icons a:hover {
+        color: #000;
+    }
+
+    .footer-logo img {
+        width: 80px;
+        /* Updated width */
+        height: 49.5px;
+        /* Updated height */
+    }
+
+    /* Footer Bottom Section */
+    .footer-line {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        font-size: 1.125rem;
+        /* Updated font-size */
+        font-weight: 500;
+        /* Updated font-weight */
+    }
+
+    .legal-links a {
+        margin: 0 5px;
+        font-size: 1.125rem;
+        /* Updated font-size */
+        font-weight: 500;
+        /* Updated font-weight */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .legal-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .footer-main {
+            flex-direction: column;
+            align-items: center;
+            /* Center columns on smaller screens */
+            padding: 0 0%;
+            /* 5% padding on left and right */
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .legal-links {
+            margin-top: 10px;
+        }
+
+        .footer-social {
+            text-align: center;
+            /* Center social icons */
+        }
+
+        .social-icons a {
+            margin: 0 8px;
+            /* Adjust social icon spacing */
+        }
+    }
+
+
+        .stats1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 2% 5%;
+            /* background-color: #f4f4f4; */
+            text-align: center;
+            align-items: center;
+        }
+
+        .stat1 {
+            opacity: 1;
+            /* Ensure visibility */
+            transform: none;
+            /* Remove transformation */
+            position: relative;
+        }
+
+        .stat1:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background-color: #ccc;
+        }
+
+        .stat1 span {
+            color: #5f249f !important;
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .stat1 p {
+            font-size: 1.125rem;
+            line-height: 1.3;
+            margin-top: .3125rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats1 {
+                grid-template-columns: 1fr;
+            }
+
+            .stat1:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        /* General Section Styling */
+        .section944,
+        .section8747 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 5%;
+            padding-left: 5%;
+            padding-top: 5%;
+            gap: 5%;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        /* Text Column Styling */
+        .section944 .text-column,
+        .section8747 .text-column {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .reveal-text {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Column Setup */
+        .section944 .column,
+        .section8747 .column {
+            flex: 1;
+        }
+
+        /* Image Column Styling */
+        .section944 .image-column,
+        .section8747 .image-column {
+            position: relative;
+            width: 100% !important;
+            height: 100% !important;
+            /* Ensures the image column takes the full height */
+        }
+
+        .section944 .image-column img,
+        .section8747 .image-column img {
+            width: 100% !important;
+            /* Ensure full width */
+            height: 100% !important;
+            /* Make image fill the container */
+            object-fit: cover !important;
+            /* Ensure the image covers the column without distortion */
+        }
+
+        /* Text Styling */
+        .section944 .text-column h2,
+        .section8747 .text-column h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            /* Ensure gap below h1 */
+        }
+
+        .section944 .text-column p,
+        .section8747 .text-column p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        /* Button Styling */
+        .section944 .text-column button,
+        .section8747 .text-column button {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.0375rem;
+            line-height: 1.5;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: left;
+        }
+
+        .section944 .text-column button:hover,
+        .section8747 .text-column button:hover {
+            background-color: #0056b3;
+        }
+
+        /* General Styles for All Screens */
+        .section944,
+        .section8747 {
+            margin-bottom: 50px;
+        }
+
+        /* Tablet-Specific Styles (max-width: 1024px) */
+        @media (max-width: 1024px) {
+
+            .section944 .text-column h2,
+            .section8747 .text-column h2 {
+                font-size: 2.2rem;
+                /* Adjust font size for tablets */
+                margin-bottom: 1.2rem;
+                /* Slightly smaller gap for tablets */
+            }
+
+            /* Ensure the text and image are aligned properly */
+            .section944,
+            .section8747 {
+                flex-direction: column;
+                gap: 20px !important;
+            }
+        }
+
+        /* Mobile Specific Styles (max-width: 768px) */
+        @media (max-width: 768px) {
+
+            /* Stack the image and text */
+            .section944,
+            .section8747 {
+                flex-direction: column;
+                gap: 20px !important;
+                /* Ensure space between stacked elements */
+            }
+
+            /* Image should appear first in mobile view */
+            .section944 .image-column,
+            .section8747 .image-column {
+                order: 1 !important;
+                width: 100% !important;
+                height: 300px !important;
+                /* Set a fixed height for image */
+            }
+
+            /* Text Column Order */
+            .section944 .text-column,
+            .section8747 .text-column {
+                order: 2 !important;
+            }
+
+            .section8747 .image-column {
+                order: -1 !important;
+                /* Moves the image above the text in section 8747 */
+            }
+
+            /* Ensure Image Fills Column */
+            .section944 .image-column img,
+            .section8747 .image-column img {
+                object-fit: cover !important;
+                /* Ensures image covers column space */
+                width: 100% !important;
+                height: 100% !important;
+                /* Enforces full height in the column */
+            }
+
+            /* Justify Text in Mobile */
+            .section944 .text-column p,
+            .section8747 .text-column p {
+                text-align: justify !important;
+                /* Justify text in mobile view */
+            }
+        }
+
+        /* Large Screens / Desktop (min-width: 1025px) */
+        @media (min-width: 1025px) {
+
+            .section944,
+            .section8747 {
+                flex-direction: row;
+                gap: 30px;
+                /* Larger gap between columns */
+            }
+
+            .section944 .image-column,
+            .section8747 .image-column {
+                height: auto;
+                width: 45%;
+                /* Reduced image width for large screens */
+            }
+
+            .section944 .text-column,
+            .section8747 .text-column {
+                width: 50%;
+                /* Text takes 50% of the container */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img style="width: 15rem;" src="Picture1.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Solutions.html">Services</a></li>
+                <li><a href="service1.html">Solution</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="Picture51.jpg" alt="Slide 1" class="active">
+        <img src="show-off-aurora-1143296_1280.jpg" alt="Slide 2">
+        <img src="digital-6228018_1280.jpg" alt="Slide 3">
+
+        <div class="hero-content">
+            <h1>HashXpert</h1>
+            <p>HashXpert Technologies LLC is a company with a deep understanding of emerging IT industry trends</p>
+        </div>
+
+        <button class="arrow left">&#8249;</button>
+        <button class="arrow right">&#8250;</button>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="news-carousel">
+            <div class="news-item">News 1: Lorem ipsum dolor sit amet.</div>
+            <div class="news-item">News 2: Consectetur adipiscing elit.</div>
+            <div class="news-item">News 3: Sed do eiusmod tempor incididunt.</div>
+        </div>
+
+        <button class="arrow left">&#8249;</button>
+        <button class="arrow right">&#8250;</button>
+    </section>
+
+    <!-- Vision Mission Section -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column (Vision & Mission Text) -->
+                <div class="col-md-6 vision-mission-text">
+                    <div class="vision">
+                        <h2>Vision</h2>
+                        <hr>
+                        <p>To be a customer-centric company that empowers customers with the freedom to choose solutions
+                            and services that prioritize comprehensive security at the most competitive prices.
+                        </p>
+                    </div>
+                    <div class="mission">
+                        <h2>Mission</h2>
+                        <hr>
+                        <p>To deliver the highest-quality IT solutions to our customers, emphasizing exceptional
+                            service, a wide range of solution choices, and unwavering security.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column (Image) -->
+                <div class="col-md-6 vision-mission-image">
+                    <div class="image-container">
+                        <img src="vision-mission-planning-aspirations-process-concept.jpg"
+                            alt="Vision and Mission Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- aboutus Section -->
+    <!-- About Us Section -->
+    <section class="about-us895">
+        <div class="container895">
+            <div class="row895">
+                <div class="col-md-12 about-us-text895">
+                    <h2>About Us</h2>
+                    <P>HashXpert was founded by IT industry veterans, bringing a wealth of experience to the company. We
+                        have a deep understanding of the evolving IT landscape and are committed to providing innovative
+                        solutions. With headquarters in Dubai and a growing presence in India, we serve businesses of
+                        all sizes – from startups to large enterprises.
+                    </P>
+                    <p>Experience and Vision of Gentlemen with vast experience in the IT industry gave birth to
+                        HashXpert Technologies LLC. Built from the ground up, HashXpert Technologies LLC is a company
+                        with a deep understanding of emerging IT industry trends. Headquartered in Dubai, covering the
+                        Middle East and India with an on-the-ground presence in UAE.</p>
+                    <p>We are one of the System Integrators in the UAE. We provide end-to-end IT solutions for startups
+                        and SMEs to large enterprises. We deliver custom IT solutions across multiple platforms and
+                        technologies. Our talented team of Xpert’s works with you to transform your ideas into reality.
+                    </p>
+                    <p>We are a growing team with expertise in product design, architecture, implementation, and
+                        deployment across multiple platforms Network, System, Security, and Services. Combined with a
+                        dedication to delivering high-quality solutions that are user-friendly and easy to maintain for
+                        our clients and their end-users, we do it all at competitive prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section944">
+        <div class="column text-column">
+            <h2>Services</h2>
+            <p>Tailored solutions to meet business needs, enhancing efficiency and scalability.Secure and scalable cloud
+                infrastructure for seamless data storage and operations. Intelligent automation and data-driven insights
+                for smarter decision-making.</p>
+                <button onclick="window.location.href='Solutions.html'">Learn More</button>
+
+        </div>
+        <div class="column image-column">
+            <img src="young-couple-buying-car-car-showroom.jpg" alt="Services">
+        </div>
+    </section>
+
+    <section class="section8747">
+        <div class="column image-column">
+            <img src="app-woman-white-solution-closeup-two.jpg" alt="Solutions Image">
+        </div>
+        <div class="column text-column">
+            <h2>Solutions</h2>
+            <p>
+                Technology solutions drive innovation by enhancing efficiency, automation, and connectivity across
+                industries. They empower businesses with AI, cloud computing, and IoT to streamline operations and
+                improve decision-making. From healthcare to finance, technology solutions transform challenges into
+                opportunities for growth and advancement.</p>
+                <button onclick="window.location.href='service1.html'">Learn More</button>
+        </div>
+    </section>
+    <section class="stats1">
+        <div class="stat1">
+            <span>70+</span>
+            <p>countries</p>
+        </div>
+        <div class="stat1">
+            <span>125,000+</span>
+            <p>employees</p>
+        </div>
+        <div class="stat1">
+            <span>60+</span>
+            <p>years of innovation</p>
+        </div>
+    </section>
+
+
+
+    <section class="container55">
+        <div class="left-column">
+            <h1>Modernize and Transform</h1>
+            <p>We work every day to support our clients’ growth in the era of AI and to deliver mission-critical
+                operations at scale with security, reliability, performance and compliance.</p>
+            <a href="#" class="button">Explore Our Offerings</a>
+        </div>
+        <div class="right-column">
+            <img src="businessman-pointing-his-presentation-futuristic-digital-screen.jpg"
+                alt="Modernize and Transform Image">
+        </div>
+    </section>
+    <section class="section-connect">
+        <h2>Connect with HashXpert</h2>
+        <button class="contact-button" onclick="window.location.href='Contact.html'">Contact Us</button>
+
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Main Section -->
+            <div class="footer-main">
+                <div class="column-left">
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Solution</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <div class="logo-row">
+                        <img src="Picture1.png" alt="DXC Logo" class="footer-logo">
+                    </div>
+                    <div class="text-row">
+                        <p>
+                            Experience and Vision of Gentlemen with vast experience in the IT industry gave birth to
+                            HashXpert Technologies LLC. Built from the ground up, HashXpert Technologies LLC is a
+                            company with a deep understanding of emerging IT industry trends. Headquartered in Dubai,
+                            covering the Middle East and India with an on-the-ground presence in UAE.We are one of the
+                            System Integrators in the UAE. We provide end-to-end IT solutions for startups and SMEs to
+                            large enterprises. We deliver custom IT solutions across multiple platforms and
+                            technologies. Our talented team of Xpert’s works with you to transform your ideas into
+                            reality.<a href="https://dxc.com" target="_blank">DXC.com</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Icons Section -->
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <hr class="footer-line">
+            <div class="footer-bottom">
+                <p class="copyright">© 2022 HashXpert Technologies LLC</p>
+                <div class="legal-links">
+                    <a href="#">Cookies</a> |
+                    <a href="#">Terms</a> |
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Up Button -->
+    <button id="scrollUpBtn" title="Scroll to Top">↑</button>
+    <script src="script.js"></script>
+    <script>
+
+
+        // Scroll Up Button Functionality
+        var scrollUpBtn = document.getElementById("scrollUpBtn");
+
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollUpBtn.style.display = "block";
+            } else {
+                scrollUpBtn.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollUpBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    <script>
+        // Hero Section Slider
+        const heroImages = document.querySelectorAll('.hero img');
+        const heroLeftArrow = document.querySelector('.hero .arrow.left');
+        const heroRightArrow = document.querySelector('.hero .arrow.right');
+        let heroIndex = 0;
+
+        function showHeroSlide(index) {
+            heroImages.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        heroLeftArrow.addEventListener('click', () => {
+            heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
+            showHeroSlide(heroIndex);
+        });
+
+        heroRightArrow.addEventListener('click', () => {
+            heroIndex = (heroIndex + 1) % heroImages.length;
+            showHeroSlide(heroIndex);
+        });
+
+        // Automatic Slide for Hero Section
+        setInterval(() => {
+            heroIndex = (heroIndex + 1) % heroImages.length;
+            showHeroSlide(heroIndex);
+        }, 5000);
+
+        // News Carousel Slider
+        const newsItems = document.querySelectorAll('.news-item');
+        const newsCarousel = document.querySelector('.news-carousel');
+        const newsLeftArrow = document.querySelector('.news .arrow.left');
+        const newsRightArrow = document.querySelector('.news .arrow.right');
+        let newsIndex = 0;
+
+        function showNewsSlide(index) {
+            const offset = -index * 100;
+            newsCarousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        newsLeftArrow.addEventListener('click', () => {
+            newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
+            showNewsSlide(newsIndex);
+        });
+
+        newsRightArrow.addEventListener('click', () => {
+            newsIndex = (newsIndex + 1) % newsItems.length;
+            showNewsSlide(newsIndex);
+        });
+
+        // Automatic Slide for News
+        setInterval(() => {
+            newsIndex = (newsIndex + 1) % newsItems.length;
+            showNewsSlide(newsIndex);
+        }, 5000);
+    </script>
+
+    <script>
+        document.addEventListener("scroll", function () {
+            document.querySelectorAll(".section944 .text-column, .section8747 .text-column").forEach(textColumn => {
+                const columnTop = textColumn.getBoundingClientRect().top;
+                if (columnTop < window.innerHeight * 0.85) {
+                    textColumn.classList.add("reveal-text");
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
