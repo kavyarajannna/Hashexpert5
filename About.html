@@ -155,39 +155,7 @@
         }
     }
 
-    /* Stats Section */
-    .stats {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 105px;
-        gap: 50px;
-        text-align: center;
-        font-size: 16px;
-        background-color: #5c2d91;
-    }
-
-    .stat span {
-        font-size: 1.75rem;
-        font-weight: 600;
-        line-height: 1.1;
-        color: #eaeaea;
-    }
-
-    .stat p {
-        font-size: 1.2857142857rem;
-        line-height: 1.875rem;
-        font-weight: 400;
-        color: #f9f9f9;
-    }
-
-    .vertical-line {
-        width: 1px;
-        height: 100px;
-        /* Increased height */
-        background-color: #000000;
-    }
-
+   
     /* Video and Text Section */
     .video-text {
         display: flex;
@@ -307,14 +275,7 @@
             text-align: center;
         }
 
-        .stats {
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .vertical-line {
-            display: none;
-        }
+       
 
         .video-text {
             flex-direction: column;
@@ -1276,6 +1237,73 @@
             grid-template-columns: 1fr;
         }
     }
+    /* Four-Column Section Styles */
+.custom-four-columns8976 {
+    padding: .5rem 5rem;
+    background-color: #5c2d91;
+}
+
+.custom-container8976 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.custom-column8976 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #fff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.custom-column8976:first-child {
+    border-left: none;
+}
+
+.custom-four-columns8976 h3 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.custom-four-columns8976::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    /* background-color: #000; */
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .custom-container8976 {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-column8976 {
+        border-left: none;
+        border-top: 2px solid #fff; /* Change to white */
+    }
+
+    .custom-column8976:first-child {
+        border-top: none;
+    }
+
+    .custom-four-columns8976::after {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .custom-four-columns8976::after {
+        display: none;
+    }
+}
+
 </style>
 </head>
 
@@ -1306,26 +1334,28 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stat">
-            <span>70+</span>
-            <p>countries</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="stat">
-            <span>125,000+</span>
-            <p>employees</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="stat">
-            <span>200</span>
-            <p>customers in the Fortune 500</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="stat">
-            <span>60+</span>
-            <p>years of innovation</p>
+    <section class="custom-four-columns8976">
+        <div class="custom-container8976">
+            <div class="custom-column8976">
+                <h3>70+</h3>
+                <p class="p8976">countries</p>
+            </div>
+            <div class="custom-column8976">
+                <h3>125,000+</h3>
+                <p class="p8976">employees</p>
+            </div>
+            <div class="custom-column8976">
+                <h3>200</h3>
+                <p class="p8976">customers in the Fortune 500</p>
+            </div>
+            <div class="custom-column8976">
+                <h3>60+</h3>
+                <p class="p8976">years of innovation</p>
+            </div>
+            <!-- <div class="custom-column8976">
+                    <h3>04</h3>
+                    <p class="p8976">lalalaalal</p>
+                </div> -->
         </div>
     </section>
 
