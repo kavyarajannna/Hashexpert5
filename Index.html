@@ -18,106 +18,106 @@
 
         }
 
-         /* Header Styles */
-      header {
-        background-color: white;
-        color: #000;
-        padding: 15px 20px;
-    }
-
-    .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .nav-links {
-        display: flex;
-        list-style: none;
-    }
-
-    .nav-links li {
-        margin: 0 15px;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: #333;
-        font-size: 20px;
-        padding: 5px;
-        transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-        color: #007bff;
-    }
-
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        display: block;
-        height: 3px;
-        background-color: black;
-        border-radius: 2px;
-        transition: transform 0.3s, opacity 0.3s;
-    }
-
-    .hamburger.close span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.close span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.close span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    @media (max-width: 768px) {
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background-color: #333;
-            width: 100%;
-            z-index: 10;
-            padding: 20px 0;
+        /* Header Styles */
+        header {
+            background-color: white;
+            color: #000;
+            padding: 15px 20px;
         }
 
-        .nav-links.active {
+        .navbar {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
         }
 
         .nav-links li {
-            margin: 10px 0;
-            text-align: center;
+            margin: 0 15px;
         }
 
         .nav-links a {
-            color: white;
-            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
         }
 
         .hamburger {
-            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
         }
-    }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background-color: black;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .hamburger.close span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.close span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.close span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                z-index: 10;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                color: white;
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
 
 
 
@@ -266,64 +266,7 @@
             }
         }
 
-        /* News Section */
-        section.news {
-            background-color: #4A148C;
-            color: white;
-            padding: 10px;
-            position: relative;
-            height: 150px;
-            /* Reduced height */
-        }
 
-        section.news .news-carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        section.news .news-item {
-            flex: 0 0 100%;
-            text-align: center;
-            font-size: 1.2rem;
-            transition: transform 1s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        section.news .arrow {
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 1.5rem;
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 10;
-            transform: translateY(-50%);
-        }
-
-        section.news .arrow.left {
-            left: 10px;
-        }
-
-        section.news .arrow.right {
-            right: 10px;
-        }
-
-        section.news .news-footer {
-            text-align: center;
-            margin-top: 10px;
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -340,15 +283,7 @@
                 height: 40px;
             }
 
-            section.news {
-                height: 120px;
-                /* Further reduce height for smaller screens */
-            }
 
-            section.news .arrow {
-                width: 30px;
-                height: 30px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -360,10 +295,7 @@
                 font-size: 0.8rem;
             }
 
-            section.news {
-                height: 100px;
-                /* Minimum height for mobile devices */
-            }
+
         }
 
         /* Section Styles */
@@ -812,189 +744,189 @@
 
 
         /* Footer Styling */
-       /* Footer Styling */
-    footer {
-        background-color: #eceef1;
-        padding: 30px 0;
-        /* Reduced vertical padding */
-        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        color: #333;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .footer-container {
-        width: 100%;
-        /* Full width for footer */
-        margin: 0 auto;
-        padding: 0 5%;
-        /* 5% padding on left and right */
-    }
-
-    /* Adjust padding for smaller screens (below 768px) */
-    @media (max-width: 768px) {
-        .footer-container {
-            padding: 0 5%;
-            /* Maintain 5% padding on left and right for small screens */
+        /* Footer Styling */
+        footer {
+            background-color: #eceef1;
+            padding: 30px 0;
+            /* Reduced vertical padding */
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            color: #333;
+            width: 100%;
+            box-sizing: border-box;
         }
-    }
 
-    .footer-main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    .column-left,
-    .column-right {
-        padding: 0 0;
-        /* Reduced padding */
-        flex: 1;
-        min-width: 250px;
-        box-sizing: border-box;
-        /* Prevents extra space from padding */
-    }
-
-    /* Footer Links */
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-links li {
-        margin: 10px 0;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #4b0082;
-        font-weight: bold;
-        font-size: 1.3rem;
-        /* Updated font-size */
-        line-height: 1.5;
-    }
-
-    .footer-links a:hover {
-        color: #000;
-    }
-
-    /* Right Column */
-    .footer-logo {
-        width: 300px;
-        height: auto;
-        margin-bottom: 30px;
-    }
-
-    .text-row p {
-        text-align: justify;
-        font-size: 1.2857142857rem;
-        /* Updated font-size */
-        line-height: 1.8125rem;
-        /* Updated line-height */
-    }
-
-    .text-row a {
-        color: #4b0082;
-        text-decoration: none;
-    }
-
-    .text-row a:hover {
-        text-decoration: underline;
-    }
-
-    /* Social Icons Section */
-    .footer-social {
-        text-align: left;
-        margin-bottom: 20px;
-    }
-
-    .social-icons a {
-        color: #5f249f;
-        /* Updated color */
-        font-size: 30px;
-        margin-right: 10px;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .social-icons a:hover {
-        color: #000;
-    }
-
-    .footer-logo img {
-        width: 80px;
-        /* Updated width */
-        height: 49.5px;
-        /* Updated height */
-    }
-
-    /* Footer Bottom Section */
-    .footer-line {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin: 20px 0;
-    }
-
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    .footer-bottom p {
-        margin: 0;
-        font-size: 1.125rem;
-        /* Updated font-size */
-        font-weight: 500;
-        /* Updated font-weight */
-    }
-
-    .legal-links a {
-        margin: 0 5px;
-        font-size: 1.125rem;
-        /* Updated font-size */
-        font-weight: 500;
-        /* Updated font-weight */
-        color: #333;
-        text-decoration: none;
-    }
-
-    .legal-links a:hover {
-        text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .footer-main {
-            flex-direction: column;
-            align-items: center;
-            /* Center columns on smaller screens */
-            padding: 0 0%;
+        .footer-container {
+            width: 100%;
+            /* Full width for footer */
+            margin: 0 auto;
+            padding: 0 5%;
             /* 5% padding on left and right */
         }
 
-        .footer-bottom {
-            flex-direction: column;
-            text-align: center;
+        /* Adjust padding for smaller screens (below 768px) */
+        @media (max-width: 768px) {
+            .footer-container {
+                padding: 0 5%;
+                /* Maintain 5% padding on left and right for small screens */
+            }
         }
 
-        .legal-links {
-            margin-top: 10px;
+        .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
 
+        .column-left,
+        .column-right {
+            padding: 0 0;
+            /* Reduced padding */
+            flex: 1;
+            min-width: 250px;
+            box-sizing: border-box;
+            /* Prevents extra space from padding */
+        }
+
+        /* Footer Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin: 10px 0;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #4b0082;
+            font-weight: bold;
+            font-size: 1.3rem;
+            /* Updated font-size */
+            line-height: 1.5;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        /* Right Column */
+        .footer-logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .text-row p {
+            text-align: justify;
+            font-size: 1.2857142857rem;
+            /* Updated font-size */
+            line-height: 1.8125rem;
+            /* Updated line-height */
+        }
+
+        .text-row a {
+            color: #4b0082;
+            text-decoration: none;
+        }
+
+        .text-row a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Icons Section */
         .footer-social {
-            text-align: center;
-            /* Center social icons */
+            text-align: left;
+            margin-bottom: 20px;
         }
 
         .social-icons a {
-            margin: 0 8px;
-            /* Adjust social icon spacing */
+            color: #5f249f;
+            /* Updated color */
+            font-size: 30px;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
         }
-    }
+
+        .social-icons a:hover {
+            color: #000;
+        }
+
+        .footer-logo img {
+            width: 80px;
+            /* Updated width */
+            height: 49.5px;
+            /* Updated height */
+        }
+
+        /* Footer Bottom Section */
+        .footer-line {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 1.125rem;
+            /* Updated font-size */
+            font-weight: 500;
+            /* Updated font-weight */
+        }
+
+        .legal-links a {
+            margin: 0 5px;
+            font-size: 1.125rem;
+            /* Updated font-size */
+            font-weight: 500;
+            /* Updated font-weight */
+            color: #333;
+            text-decoration: none;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-main {
+                flex-direction: column;
+                align-items: center;
+                /* Center columns on smaller screens */
+                padding: 0 0%;
+                /* 5% padding on left and right */
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .legal-links {
+                margin-top: 10px;
+            }
+
+            .footer-social {
+                text-align: center;
+                /* Center social icons */
+            }
+
+            .social-icons a {
+                margin: 0 8px;
+                /* Adjust social icon spacing */
+            }
+        }
 
 
         .stats1 {
@@ -1277,17 +1209,8 @@
         <button class="arrow right">&#8250;</button>
     </section>
 
-    <!-- News Section -->
-    <section class="news">
-        <div class="news-carousel">
-            <div class="news-item">News 1: Lorem ipsum dolor sit amet.</div>
-            <div class="news-item">News 2: Consectetur adipiscing elit.</div>
-            <div class="news-item">News 3: Sed do eiusmod tempor incididunt.</div>
-        </div>
+  
 
-        <button class="arrow left">&#8249;</button>
-        <button class="arrow right">&#8250;</button>
-    </section>
 
     <!-- Vision Mission Section -->
     <section class="vision-mission">
@@ -1357,7 +1280,7 @@
             <p>Tailored solutions to meet business needs, enhancing efficiency and scalability.Secure and scalable cloud
                 infrastructure for seamless data storage and operations. Intelligent automation and data-driven insights
                 for smarter decision-making.</p>
-                <button onclick="window.location.href='Solutions.html'">Learn More</button>
+            <button onclick="window.location.href='Solutions.html'">Learn More</button>
 
         </div>
         <div class="column image-column">
@@ -1376,7 +1299,7 @@
                 industries. They empower businesses with AI, cloud computing, and IoT to streamline operations and
                 improve decision-making. From healthcare to finance, technology solutions transform challenges into
                 opportunities for growth and advancement.</p>
-                <button onclick="window.location.href='service1.html'">Learn More</button>
+            <button onclick="window.location.href='service1.html'">Learn More</button>
         </div>
     </section>
     <section class="stats1">
@@ -1522,35 +1445,12 @@
             showHeroSlide(heroIndex);
         }, 5000);
 
-        // News Carousel Slider
-        const newsItems = document.querySelectorAll('.news-item');
-        const newsCarousel = document.querySelector('.news-carousel');
-        const newsLeftArrow = document.querySelector('.news .arrow.left');
-        const newsRightArrow = document.querySelector('.news .arrow.right');
-        let newsIndex = 0;
-
-        function showNewsSlide(index) {
-            const offset = -index * 100;
-            newsCarousel.style.transform = `translateX(${offset}%)`;
-        }
-
-        newsLeftArrow.addEventListener('click', () => {
-            newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
-            showNewsSlide(newsIndex);
-        });
-
-        newsRightArrow.addEventListener('click', () => {
-            newsIndex = (newsIndex + 1) % newsItems.length;
-            showNewsSlide(newsIndex);
-        });
-
-        // Automatic Slide for News
-        setInterval(() => {
-            newsIndex = (newsIndex + 1) % newsItems.length;
-            showNewsSlide(newsIndex);
-        }, 5000);
+      
+       
     </script>
-
+<script>
+    
+</script>
     <script>
         document.addEventListener("scroll", function () {
             document.querySelectorAll(".section944 .text-column, .section8747 .text-column").forEach(textColumn => {
