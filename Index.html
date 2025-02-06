@@ -155,148 +155,190 @@
             }
         }
 
-        /* Hero Section */
-        section.hero {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            /* Default height for large screens */
-            overflow: hidden;
-        }
+       /* Hero Section */
+section.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    /* Default height for large screens */
+    overflow: hidden;
+}
 
-        section.hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
+section.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-        section.hero img.active {
-            opacity: 1;
-        }
+section.hero img.active {
+    opacity: 1;
+}
 
-        section.hero .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* Center text horizontally and vertically */
-            color: #ffffff;
-            text-align: center;
-            /* Ensure the text is centered */
-            width: 100%;
-            padding: 0 10%;
-            /* Add some padding for smaller screens */
-        }
+section.hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center text horizontally and vertically */
+    color: #ffffff;
+    text-align: center;
+    /* Ensure the text is centered */
+    width: 100%;
+    padding: 0 10%;
+    /* Add some padding for smaller screens */
+}
 
-        section.hero .hero-content h1 {
-            font-size: 2.2857142858rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: .5rem;
-        }
+section.hero .hero-content h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 5rem;
+    margin-bottom: .5rem;
+}
 
-        section.hero .hero-content p {
-            font-size: 1.2857142857rem;
-            margin-bottom: 1rem;
-            margin-top: 0;
-            line-height: 1.875rem;
-            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        }
+section.hero .hero-content p {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    line-height: 3rem;
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
 
-        /* Updated Arrow Styles (Larger Size) */
-        section.hero .arrow {
-            position: absolute;
-            top: 50%;
-            font-size: 6rem;
-            /* Large size */
-            color: white;
-            /* Arrow color */
-            cursor: pointer;
-            z-index: 10;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-        }
+/* Updated Arrow Styles (Larger Size) */
+section.hero .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 6rem;
+    /* Large size */
+    color: white;
+    /* Arrow color */
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+}
 
-        /* Left and Right Arrows */
-        section.hero .arrow.left {
-            left: 10px;
-        }
+/* Left and Right Arrows */
+section.hero .arrow.left {
+    left: 10px;
+}
 
-        section.hero .arrow.right {
-            right: 10px;
+section.hero .arrow.right {
+    right: 10px;
+}
 
-        }
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+    section.hero {
+        height: 50vh;
+        /* Slightly reduced height for tablets */
+    }
 
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            section.hero {
-                height: 40vh;
-                /* Reduced height for mobile */
-            }
+    section.hero .hero-content {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        padding: 0 5%;
+        top: 45%;
+        /* Adjust top positioning to keep the content centered */
+    }
 
-            section.hero .arrow {
+    section.hero .hero-content h1 {
+        font-size: 3rem;
+    }
 
-                font-size: 3.5rem;
-                /* Reduce size for smaller screens */
-                top: auto;
-                /* Reset top position */
-                bottom: 10%;
-                /* Move arrow downward */
-                right: 10%;
-                /* Position it away from the menu */
-                left: auto;
-                /* Prevent centering */
-            }
+    section.hero .hero-content p {
+        font-size: 1.5rem;
+    }
 
-            section.hero .hero-content {
-                left: 50%;
-                /* Centering on small screens */
-                transform: translateX(-50%);
-                /* Adjust positioning for mobile */
-                width: 80%;
-                /* Decrease width for mobile */
-                padding: 0 5%;
-                /* Reduce padding */
-            }
-        }
+    /* Adjust the arrow for smaller screens */
+    section.hero .arrow {
+        font-size: 4rem;
+        top: 50%;
+        /* Center vertically */
+        transform: translateY(-50%);
+    }
 
+    section.hero .arrow.left {
+        left: 10px;
+        /* Keep left arrow on the left */
+    }
 
+    section.hero .arrow.right {
+        right: 10px;
+        /* Keep right arrow on the right */
+    }
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section.hero .hero-content h1 {
-                font-size: 2rem;
-            }
+/* Mobile and smaller screens */
+@media (max-width: 768px) {
+    section.hero {
+        height: 40vh;
+        /* Reduced height for mobile */
+    }
 
-            section.hero .hero-content p {
-                font-size: 1rem;
-            }
+    section.hero .hero-content {
+        width: 90%;
+        /* Slightly reduced width */
+        padding: 0 3%;
+        top: 40%;
+        /* Adjust the top position */
+    }
 
-            section.hero .arrow {
-                width: 40px;
-                height: 40px;
-            }
+    section.hero .hero-content h1 {
+        font-size: 2rem;
+    }
 
+    section.hero .hero-content p {
+        font-size: 1rem;
+    }
 
-        }
+    section.hero .arrow {
+        font-size: 3.5rem;
+        top: 50%;
+        /* Ensure vertical centering */
+        transform: translateY(-50%);
+    }
 
-        @media (max-width: 480px) {
-            section.hero .hero-content h1 {
-                font-size: 1.5rem;
-            }
+    section.hero .arrow.left {
+        left: 10px;
+        /* Keep left arrow on the left */
+    }
 
-            section.hero .hero-content p {
-                font-size: 0.8rem;
-            }
+    section.hero .arrow.right {
+        right: 10px;
+        /* Keep right arrow on the right */
+    }
+}
 
+/* Very small screens */
+@media (max-width: 480px) {
+    section.hero .hero-content h1 {
+        line-height: 1rem;
+    }
 
-        }
+    section.hero .hero-content p {
+        line-height: 1rem;
+    }
+
+    section.hero .arrow {
+        font-size: 3rem;
+    }
+
+    section.hero .arrow.left {
+        left: 10px;
+    }
+
+    section.hero .arrow.right {
+        right: 10px;
+    }
+}
+
 
         /* Section Styles */
         /* Section Styles */
