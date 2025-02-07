@@ -20,9 +20,9 @@
 
     }
 
-     /* Header Styles */
-      /* Header Styles */
-      header {
+    /* Header Styles */
+    /* Header Styles */
+    header {
         background-color: white;
         color: #000;
         padding: 15px 20px;
@@ -163,7 +163,7 @@
     /* Heading for Contact Form */
     .contact-form h2 {
         font-size: 3rem;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 1.2;
         margin-bottom: 1.5rem;
         font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -192,7 +192,7 @@
     /* Submit Button */
     .contact-form button {
         padding: 10px 20px;
-        background-color: #5c2d91;
+        background-color: #1B449C;
         color: white;
         border: none;
         /* border-radius: 5px; */
@@ -201,17 +201,17 @@
 
     /* Hover Effect for Button */
     .contact-form button:hover {
-        background-color: #8e44ad;
+        background-color: #153476;
     }
 
     /* Vertical Line - Position it within the gap */
     .contact-container .vertical-line {
         width: 2px;
-        background-color: #9b59b6;
+        background-color: #1B449C;
         height: auto;
         margin: 0 20px;
         /* Add gap between the columns */
-        border-left: 2px solid #9b59b6;
+        border-left: 2px solid #1B449C;
         /* Adds the actual vertical line */
     }
 
@@ -223,13 +223,21 @@
         padding: 20px;
         border-radius: 8px;
     }
+    .map h2 {
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+}
 
     /* Scroll Up Button */
     #scrollUpBtn {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #9b59b6;
+        background-color: #1B449C;
         color: white;
         border: none;
         padding: 15px;
@@ -241,7 +249,7 @@
     }
 
     #scrollUpBtn:hover {
-        background-color: #8e44ad;
+        background-color: #FBBC05;
     }
 
     /* Mobile Responsiveness */
@@ -282,7 +290,7 @@
 
     /* section content */
     section.section-connect {
-        background-color: #5c2d91;
+        background-color: #1B449C;
         color: #fff;
         display: flex;
         justify-content: space-between;
@@ -319,7 +327,7 @@
 
     .contact-button:hover {
         background-color: #fff;
-        color: #5c2d91;
+        color: #1B449C;
     }
 
     @media (max-width: 1200px) {
@@ -395,13 +403,7 @@
         /* 5% padding on left and right */
     }
 
-    /* Adjust padding for smaller screens (below 768px) */
-    @media (max-width: 768px) {
-        .footer-container {
-            padding: 0 5%;
-            /* Maintain 5% padding on left and right for small screens */
-        }
-    }
+   
 
     .footer-main {
         display: flex;
@@ -433,7 +435,7 @@
 
     .footer-links a {
         text-decoration: none;
-        color: #4b0082;
+        color: #1B449C;
         font-weight: bold;
         font-size: 1.3rem;
         /* Updated font-size */
@@ -475,7 +477,7 @@
     }
 
     .social-icons a {
-        color: #5f249f;
+        color: #1B449C;
         /* Updated color */
         font-size: 30px;
         margin-right: 10px;
@@ -529,7 +531,13 @@
     .legal-links a:hover {
         text-decoration: underline;
     }
-
+ /* Adjust padding for smaller screens (below 768px) */
+ @media (max-width: 768px) {
+        .footer-container {
+            padding: 0 5%;
+            /* Maintain 5% padding on left and right for small screens */
+        }
+    }
     /* Responsive Design */
     @media (max-width: 768px) {
         .footer-main {
@@ -559,6 +567,94 @@
             /* Adjust social icon spacing */
         }
     }
+    @media (min-width: 769px) {
+    .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .column-left, .column-right {
+        width: auto;
+        min-width: 250px;
+    }
+}
+
+
+   /* Scoped CSS for section8009 */
+   .section8009 {
+            background-color: #1b449cec;
+            padding: 5%;
+            color: white;
+            /* text-align: center; */
+        }
+
+        .section8009 h2 {
+            font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+            text-align: center;
+        }
+
+        .section8009 .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .section8009 .column {
+            flex: 1;
+            min-width: 320px;
+            max-width: 400px;
+            /* text-align: center; */
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .section8009 .text p {
+            font-size: 1.2857142857rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            font-weight: 400;
+            line-height: 1.875rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        /* Vertical Line Between Columns on Large Screens */
+        @media (min-width: 769px) {
+            .section8009 .column:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 80%;
+                background-color: white;
+            }
+        }
+
+        /* Horizontal Line Between Columns on Small Screens */
+        @media (max-width: 768px) {
+            .section8009 .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section8009 .column {
+                width: 100%;
+                max-width: 90%;
+                border-bottom: 2px solid white;
+            }
+
+            .section8009 .column:last-child {
+                border-bottom: none;
+            }
+        }
 </style>
 </head>
 
@@ -588,7 +684,7 @@
             <!-- First Column (Contact Form) -->
             <div class="contact-form">
                 <h2>Contact Us</h2>
-                <form id="contactForm" action="https://api.whatsapp.com/send?phone=+18310214624&text=" method="get"
+                <form id="contactForm" action="https://api.whatsapp.com/send?phone=+19945000068&text=" method="get"
                     target="_blank">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -614,116 +710,140 @@
             </div>
         </div>
     </section>
+    
+<section class="section8009">
+    <h2>Address</h2>
+    <div class="row">
+        <div class="column">
+            <div class="text">
+                <p>HashXpert Technologies LLC,<br>IBN Battuta - Business Gate Center,<br>PO Box: 334035,<br>Dubai, UAE.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="text">
+                <p>HashXpert Technologies LTD,<br>885A ChristChurch Road,<br>Bournemouth<br>BH7 6AU, UK.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="text">
+                <p>HashXpert India Private Limited,<br>No.2303, 21st Cross,<br>K.R Road Banashankari 2nd stage,<br>Bangalore, Karnataka, INDIA.</p>
+            </div>
+        </div>
+    </div>
+</section>
     <section class="section-connect">
         <h2>Connect with HashXpert</h2>
         <button class="contact-button" onclick="window.location.href='Contact.html'">Contact Us</button>
     </section>
+    
     <footer>
         <div class="footer-container">
             <!-- Main Section -->
             <div class="footer-main">
                 <div class="column-left">
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Solution</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Solutions.html">Services</a></li>
+                        <li><a href="service1.html">Solution</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column-right">
                     <div class="logo-row">
-                        <img src="Picture1.png" alt="DXC Logo" class="footer-logo">
+                        <img src="Picture1.png" alt="HASHXPERT Logo" class="footer-logo">
                     </div>
                     <div class="text-row">
                         <p>
-                            Experience and Vision of Gentlemen with vast experience in the IT industry gave birth to
-                            HashXpert Technologies LLC. Built from the ground up, HashXpert Technologies LLC is a
-                            company with a deep understanding of emerging IT industry trends. Headquartered in Dubai,
-                            covering the Middle East and India with an on-the-ground presence in UAE.We are one of the
-                            System Integrators in the UAE. We provide end-to-end IT solutions for startups and SMEs to
-                            large enterprises. We deliver custom IT solutions across multiple platforms and
-                            technologies. Our talented team of Xpert’s works with you to transform your ideas into
-                            reality.<a href="https://dxc.com" target="_blank">DXC.com</a>.
+                            HashXpert appears to be a forward-thinking IT company founded by seasoned
+                            professionals with extensive experience in the IT industry. The company is built on a strong
+                            foundation of understanding emerging trends and technologies, positioning itself as a key
+                            player in the IT sector. Headquartered in Dubai, HashXpert has a strategic
+                            presence in the Middle East and India, enabling it to cater to a diverse range of clients
+                            across these regions. As a system integrator in the UAE, HashXpert specializes in providing end-to-end IT solutions tailored to the needs of various
+                            businesses, from startups and SMEs to large enterprises. The company’s expertise spans
+                            multiple platforms and technologies, allowing it to deliver customized IT solutions that
+                            align with the unique requirements of its clients.
                         </p>
                     </div>
                 </div>
             </div>
-
+          
             <!-- Social Icons Section -->
             <div class="footer-social">
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.linkedin.com/company/hashxpert-technologies-llc/?originalSubdomain=ae"><i
+                            class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a> -->
                 </div>
             </div>
 
             <!-- Footer Bottom Section -->
             <hr class="footer-line">
             <div class="footer-bottom">
-                <p class="copyright">© 2022 HashXpert Technologies LLC</p>
-                <div class="legal-links">
+                <p class="copyright">© HashXpert</p>
+                <!-- <div class="legal-links">
                     <a href="#">Cookies</a> |
                     <a href="#">Terms</a> |
                     <a href="#">FAQ</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
     <!-- Scroll Up Button -->
     <button id="scrollUpBtn" title="Scroll to Top">↑</button>
 
- <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script>
-    // Initialize Leaflet map
-    var map = L.map('map').setView([25.276987, 55.296249], 3); // Set initial view to cover all locations
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize Leaflet map
+        var map = L.map('map').setView([25.276987, 55.296249], 3); // Set initial view to cover all locations
 
-    // Set up the tile layer (OpenStreetMap)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        // Set up the tile layer (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    // Add markers for each location
-    var locations = [
-        {
-            coords: [25.276987, 55.296249],
-            popup: "<b>HASHXPERT TECHNOLOGIES LLC</b><br>No 12, 2nd Floor, Czar Business Center, DIP 1<br>Dubai, UAE"
-        },
-        {
-            coords: [50.7306, -1.8283],
-            popup: "<b>HASHXPERT TECHNOLOGIES LTD</b><br>885A Christchurch Road<br>Bournemouth, BH7 6AU, UK"
-        },
-        {
-            coords: [12.9133, 77.5646],
-            popup: "<b>HASHXPERT INDIA PRIVATE LIMITED</b><br>No.2303, 21st Cross, K.R Road, Banashankari 2nd Stage<br>Bangalore, India"
-        }
-    ];
+        // Add markers for each location
+        var locations = [
+            {
+                coords: [25.276987, 55.296249],
+                popup: "<b>HASHXPERT TECHNOLOGIES LLC</b><br>No 12, 2nd Floor, Czar Business Center, DIP 1<br>Dubai, UAE"
+            },
+            {
+                coords: [50.7306, -1.8283],
+                popup: "<b>HASHXPERT TECHNOLOGIES LTD</b><br>885A Christchurch Road<br>Bournemouth, BH7 6AU, UK"
+            },
+            {
+                coords: [12.9133, 77.5646],
+                popup: "<b>HASHXPERT INDIA PRIVATE LIMITED</b><br>No.2303, 21st Cross, K.R Road, Banashankari 2nd Stage<br>Bangalore, India"
+            }
+        ];
 
-    // Add markers to map
-    locations.forEach(function (location) {
-        L.marker(location.coords).addTo(map)
-            .bindPopup(location.popup);
-    });
+        // Add markers to map
+        locations.forEach(function (location) {
+            L.marker(location.coords).addTo(map)
+                .bindPopup(location.popup);
+        });
 
-    // Scroll Up Button Functionality
-    var scrollUpBtn = document.getElementById("scrollUpBtn");
+        // Scroll Up Button Functionality
+        var scrollUpBtn = document.getElementById("scrollUpBtn");
 
-    window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollUpBtn.style.display = "block";
-        } else {
-            scrollUpBtn.style.display = "none";
-        }
-    };
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollUpBtn.style.display = "block";
+            } else {
+                scrollUpBtn.style.display = "none";
+            }
+        };
 
-    scrollUpBtn.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-</script>
+        scrollUpBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
